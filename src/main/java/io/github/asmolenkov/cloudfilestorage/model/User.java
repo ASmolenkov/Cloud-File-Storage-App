@@ -35,4 +35,8 @@ public class User {
         this.name = name;
         this.password = password;
     }
+
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 }
