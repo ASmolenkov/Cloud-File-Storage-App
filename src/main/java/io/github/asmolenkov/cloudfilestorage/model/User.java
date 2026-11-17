@@ -5,7 +5,6 @@ import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Table(name = "users")
 @Getter
@@ -29,11 +28,12 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
     public User(String name, String password) {
         this.name = name;
         this.password = password;
+        roles = new HashSet<>();
     }
 
     public void addRole(Role role) {
